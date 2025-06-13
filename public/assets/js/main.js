@@ -207,3 +207,15 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+let scrollAmount = 0;
+const scrollStep = slider.offsetWidth / 3 + 20;
+const slider = document.getElementById("sliderWrapper");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+nextBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
+});
